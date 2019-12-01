@@ -14,12 +14,15 @@ import android.text.TextUtils;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
     private EditText edmonth;
-    private EditText ednext;
+    boolean inNext = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +31,22 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         edmonth = findViewById(R.id.editText);
-        ednext = findViewById(R.id.editText2);
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
+            }
+        });
+
+        Switch sw = findViewById(R.id.sw);
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                inNext = isChecked;
+                TextView type = findViewById(R.id.type);
+                type.setText(inNext ? getText(R.string.nextly) : getText(R.string.monthly));
             }
         });
     }
@@ -60,7 +72,9 @@ public class MainActivity extends AppCompatActivity {
                     .setMessage("費用"+fee)
                     .setPositiveButton("ok",null)
                     .show();*/
-        }else {
+        }
+        /*
+        else {
             String next = ednext.getText().toString();
             if (!TextUtils.isEmpty(next)){
                 int nextt = Integer.parseInt(next);
@@ -79,7 +93,7 @@ public class MainActivity extends AppCompatActivity {
                         .setPositiveButton("ok",null)
                         .show();
             }
-        }
+        }*/
 
 
     }
