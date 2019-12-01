@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:text="當月水費"
+            android:text="@string/monthly"
             android:textAppearance="@style/TextAppearance.AppCompat.Large"
             android:textColor="#96EC33"
             app:layout_constraintEnd_toEndOf="@id/constraintLayout"

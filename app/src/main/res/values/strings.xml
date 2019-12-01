@@ -1,4 +1,7 @@
 <resources>
     <string name="app_name">tryWater</string>
     <string name="action_settings">Settings</string>
+    <string name="monthly">monthly</string>
+    <string name="nextly">nextly</string>
+    <string name="water_fee">water fee</string>
 </resources>
