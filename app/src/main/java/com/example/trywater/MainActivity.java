@@ -67,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-
+    //生命週期
     @Override
     protected void onStart() {
         super.onStart();
